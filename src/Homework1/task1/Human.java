@@ -4,12 +4,15 @@ import java.time.LocalDate;
 
 public class Human {
     String name;
-    int age;
+    int yearOfBirth;
     String town;
+
+    public void setYearOfBirth(int age) {
+        yearOfBirth = LocalDate.now().getYear() - age;
+    }
 
 
     public void greetings () {
-        int yearOfBirth = LocalDate.now().getYear()- age;
         System.out.println("Привет! Меня зовут " + name + ". Я из города " + town + ". Я родился в " + yearOfBirth +
                 " году. Будем знакомы!");
     }
