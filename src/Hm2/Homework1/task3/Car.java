@@ -1,4 +1,4 @@
-package Homework1.task3;
+package Hm2.Homework1.task3;
 
 public class Car {
     String brand;

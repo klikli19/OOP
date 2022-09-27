@@ -1,4 +1,4 @@
-package Homework1.task2;
+package Hm2.Homework1.task2;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package Homework3.task1;
+package Hm2.Homework3.task1;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -14,7 +14,6 @@ public class Human {
         this.town = Objects.requireNonNullElse(town, "(Информация не указана)");
         this.job = Objects.requireNonNullElse(job, "(Информация не указана)");
         this.yearOfBirth = age < 0 ? 0 : LocalDate.now().getYear() - age;
-
     }
 
     public String getTown() {
