@@ -1,4 +1,4 @@
-package Homework3.task2;
+package HW2.Homework3.task2;
 
 import java.util.Objects;
 
