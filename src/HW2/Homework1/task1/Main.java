@@ -1,23 +1,23 @@
-package Homework1.task1;
+package HW2.Homework1.task1;
 
 public class Main {
     public static void main(String[] args) {
         Human maksim = new Human();
-        maksim.name = "Максим";
+        maksim.setName("Максим");
         maksim.setYearOfBirth(35);
-        maksim.town = "Минск";
+        maksim.setTown("Минск");
         Human anya = new Human();
-        anya.name = "Аня";
+        anya.setName("Аня");
         anya.setYearOfBirth(29);
-        anya.town = "Москва";
+        anya.setTown("Москва");
         Human katya = new Human();
-        katya.name = "Катя";
+        katya.setName("Катя");
         katya.setYearOfBirth(28);
-        katya.town = "Калининград";
+        katya.setTown("Калининград");
         Human artem = new Human();
-        artem.name = "Артем";
+        artem.setName("Артем");
         artem.setYearOfBirth(27);
-        artem.town = "Москва";
+        artem.setTown("Москва");
         maksim.greetings();
         anya.greetings();
         katya.greetings();
