@@ -15,12 +15,28 @@ public class Main {
                 null, 5, "зимняя");
         Car hyundayAvante = new Car("Hyundai", "Avante 4", 1.6, "оранжевый", 2016,
                 null, "автомат", "седан", "T876LKKJ11", 5, "летняя");
-        System.out.println(audiA8);
+
+        bmwZ8.setTires("зимняя");
         System.out.println(bmwZ8);
         System.out.println(kiaSportage4);
         System.out.println(ladaGrande);
-
         System.out.println(hyundayAvante);
-        hyundayAvante.validRegNum();
+        System.out.println();
+        Car.Key keyAudiA8 = new Car.Key("брелок", "мобильное приложение");
+        audiA8.setKey(keyAudiA8);
+        System.out.println(audiA8);
+        System.out.println(keyAudiA8);
+        System.out.println();
+        Car.Insurance insuranceBmwZ8 = new Car.Insurance(0.0, 5000, "AAA7854521");
+        bmwZ8.setInsurance(insuranceBmwZ8);
+        System.out.println(insuranceBmwZ8);
+        insuranceBmwZ8.checkDuration();
+        System.out.println();
+        Car.Insurance insuranceKia = new Car.Insurance(1.3, 0, "EEE124787");
+        kiaSportage4.setInsurance(insuranceKia);
+        insuranceKia.checkDuration();
+        System.out.println(kiaSportage4);
+        System.out.println(insuranceKia);
+
     }
 }
