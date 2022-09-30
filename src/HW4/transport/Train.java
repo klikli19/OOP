@@ -78,7 +78,7 @@ public class Train extends Transport {
     @Override
     public void infoOfVehicle() {
         super.infoOfVehicle();
-        System.out.println("Поезд -" + getBrand() + ", модель: " + getModel() + ", " + getProductionYear() + " года, " +
+        System.out.println("Поезд - " + getBrand() + ", модель: " + getModel() + ", " + getProductionYear() + " года, " +
                 "страна - " + getProductionCountry() + ", макс.скорость - " + getMaxSpeed() + " км/час, ст. отправления - "
                 + departureStationName + ", прибывает на станцию - " + endingStationName + ", цена билета составляет "
                 + cost + " рублей, количество мест в вагоне - " + numbersOfWagons + ".");
