@@ -10,8 +10,8 @@ public class Train extends Transport {
 
 
     public Train(String brand, String model, Integer productionYear, String productionCountry, Integer maxSpeed,
-                 String departureStationName,String endingStationName, Double cost, Integer numbersOfWagons) {
-        super(brand, model, productionYear, productionCountry, maxSpeed);
+                 String departureStationName,String endingStationName, Double cost, Integer numbersOfWagons, String fuel) {
+        super(brand, model, productionYear, productionCountry, maxSpeed, fuel);
         setCost(cost);
         setDepartureStationName(departureStationName);
         setEndingStationName(endingStationName);
@@ -82,5 +82,10 @@ public class Train extends Transport {
                 "страна - " + getProductionCountry() + ", макс.скорость - " + getMaxSpeed() + " км/час, ст. отправления - "
                 + departureStationName + ", прибывает на станцию - " + endingStationName + ", цена билета составляет "
                 + cost + " рублей, количество мест в вагоне - " + numbersOfWagons + ".");
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Вид топлива для заправки поезда " + getBrand() + ": " + getFuel());
     }
 }

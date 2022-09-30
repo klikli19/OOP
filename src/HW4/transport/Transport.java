@@ -2,28 +2,35 @@ package HW4.transport;
 
 import java.util.Objects;
 
-public class Transport {
-    private String brand;
-    private String model;
-    private Integer productionYear;
-    private String productionCountry;
+public abstract class Transport {
+    private final String brand;
+    private final String model;
+    private final Integer productionYear;
+    private final String productionCountry;
     private String bodyColor;
     private Integer maxSpeed;
+    private final String fuel;
 
-    public Transport(String brand, String model, Integer productionYear, String productionCountry, String bodyColor, Integer maxSpeed) {
+    public Transport(String brand, String model, Integer productionYear, String productionCountry, String bodyColor, Integer maxSpeed, String fuel) {
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
         this.productionCountry = productionCountry;
         setBodyColor(bodyColor);
         setMaxSpeed(maxSpeed);
+        this.fuel = fuel;
     }
-    public Transport(String brand, String model, Integer productionYear, String productionCountry, Integer maxSpeed) {
+    public Transport(String brand, String model, Integer productionYear, String productionCountry, Integer maxSpeed, String fuel) {
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
         this.productionCountry = productionCountry;
         setMaxSpeed(maxSpeed);
+        this.fuel = fuel;
+    }
+
+    public String getFuel() {
+        return fuel;
     }
 
     public String getBrand() {
@@ -72,5 +79,18 @@ public class Transport {
 
     public void infoOfVehicle() {
         System.out.println("Информация о транспортном средстве:");
+    }
+
+    public abstract void refill();
+    @Override
+    public String toString() {
+        return "Транспортное средство {" +
+                "марка='" + brand + '\'' +
+                ", модель='" + model + '\'' +
+                ", год выпуска=" + productionYear +
+                ", страна выпуска='" + productionCountry + '\'' +
+                ", цвет='" + bodyColor + '\'' +
+                ", макс. скорость=" + maxSpeed +
+                '}';
     }
 }

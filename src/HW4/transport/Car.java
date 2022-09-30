@@ -124,8 +124,8 @@ public class Car extends Transport{
 
     public Car(String brand, String model, Double engineVolume, String bodyColor, Integer productionYear,
                String productionCountry, String transmission, String bodyType, String registrationNumber,
-               int numberOfSeats, String tires, Integer maxSpeed) {
-        super(brand, model, productionYear, productionCountry, bodyColor,maxSpeed);
+               int numberOfSeats, String tires, Integer maxSpeed, String fuel) {
+        super(brand, model, productionYear, productionCountry, bodyColor,maxSpeed, fuel);
         this.engineVolume = Objects.requireNonNullElse(engineVolume, 1.5);
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "Нет информации";
@@ -245,6 +245,9 @@ public class Car extends Transport{
                 ". Количество мест: " + numberOfSeats + ". Тип резины: " + tires + ". Макс.скорость: "
                 + getMaxSpeed() + " км/час.");
     }
-
+    @Override
+    public void refill() {
+        System.out.println("Вид топлива для заправки машины " + getBrand() + ": " + getFuel());
+    }
 
 }
