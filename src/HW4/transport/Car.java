@@ -8,16 +8,8 @@ public class Car extends Transport{
         private String remoteEngineStart;
 
         public Key(String keylessEntry, String remoteEngineStart) {
-            if (keylessEntry == null || keylessEntry.isBlank()) {
-                this.keylessEntry = "Нет информации";
-            } else {
-                this.keylessEntry = keylessEntry;
-            }
-            if (remoteEngineStart == null || remoteEngineStart.isBlank()) {
-                this.remoteEngineStart = "Нет информации";
-            } else {
-                this.remoteEngineStart = remoteEngineStart;
-            }
+            setKeylessEntry(keylessEntry);
+            setRemoteEngineStart(remoteEngineStart);
         }
 
         public String getKeylessEntry() {
@@ -56,17 +48,9 @@ public class Car extends Transport{
         private String number;
 
         public Insurance(Double duration, double cost, String number) {
-            if (duration == null || duration <= 0) {
-                this.duration = 0.0;
-            } else {
-                this.duration = duration;
-            }
-            this.cost = cost <= 0 ? 10000 : cost;
-            if (number.matches("[A-Z]{3}\\d{6}")) {
-                this.number = number;
-            } else {
-                this.number = "Номер указан неверно";
-            }
+            setDuration(duration);
+            setCost(cost);
+            setNumber(number);
         }
 
         public Double getDuration() {
@@ -126,17 +110,9 @@ public class Car extends Transport{
                String productionCountry, String transmission, String bodyType, String registrationNumber,
                int numberOfSeats, String tires, Integer maxSpeed, String fuel) {
         super(brand, model, productionYear, productionCountry, bodyColor,maxSpeed, fuel);
-        this.engineVolume = Objects.requireNonNullElse(engineVolume, 1.5);
-        if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
-            this.transmission = "Нет информации";
-        } else {
-            this.transmission = transmission;
-        }
-        if (bodyType == null || bodyType.isEmpty() || bodyType.isBlank()) {
-            this.bodyType = "Нет информации";
-        } else {
-            this.bodyType = bodyType;
-        }
+        setEngineVolume(engineVolume);
+        setTransmission(transmission);
+        setBodyType(bodyType);
         if (registrationNumber == null || registrationNumber.isBlank() || registrationNumber.isEmpty()){
             registrationNumber = "Нет информации";
         }
@@ -145,12 +121,8 @@ public class Car extends Transport{
         } else {
             this.registrationNumber = "Неверный формат номера";
         }
-        this.numberOfSeats =  numberOfSeats <= 0 ? 5 : numberOfSeats;
-        if (tires == null || tires.isEmpty() || tires.isBlank()) {
-            this.tires = "Нет информации";
-        } else {
-            this.tires = tires;
-        }
+        setNumberOfSeats(numberOfSeats);
+        setTires(tires);
     }
 
     public Key getKey() {
