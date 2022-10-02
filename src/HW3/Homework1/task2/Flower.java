@@ -44,6 +44,10 @@ public class Flower {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getCountry() {
         return country;
     }
