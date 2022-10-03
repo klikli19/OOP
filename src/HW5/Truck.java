@@ -1,9 +1,8 @@
 package HW5;
 
-import java.util.Objects;
+public class Truck extends Transport{
 
-public class Car extends Transport {
-    public Car(String brand, String model, Double engineVolume) {
+    public Truck(String brand, String model, Double engineVolume) {
         super(brand, model, engineVolume);
     }
 
@@ -16,6 +15,4 @@ public class Car extends Transport {
     public void finishMoving() {
 
     }
-
-
 }
