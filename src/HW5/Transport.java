@@ -43,6 +43,7 @@ public abstract class Transport {
         return "Транспортное средство {" +
                 "марка='" + brand + '\'' +
                 ", модель='" + model + '\'' +
+                ", объем двигателя='" + engineVolume + '\'' +
                 '}';
     }
 }
