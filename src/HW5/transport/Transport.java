@@ -1,4 +1,4 @@
-package HW5;
+package HW5.transport;
 
 public abstract class Transport {
     private final String brand;

@@ -1,5 +1,12 @@
 package HW5;
 
+import HW5.driver.DriverBus;
+import HW5.driver.DriverCar;
+import HW5.driver.DriverTruck;
+import HW5.transport.Bus;
+import HW5.transport.Car;
+import HW5.transport.Truck;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,6 +24,10 @@ public class Main {
         Truck zil = new Truck("ZIL", "M-2", 2.0);
         Truck ural = new Truck("URAL", "Y-4", 3.0);
         Truck gaz = new Truck("GAZ", "G-6", 3.0);
+
+        DriverCar vasya = new DriverCar("Вася", 1.0);
+        DriverTruck alesha = new DriverTruck("Алеша", 15.0);
+        DriverBus misha = new DriverBus("Миша", 7.5);
 
         System.out.println(audi);
         audi.bestTime();
@@ -47,5 +58,24 @@ public class Main {
         gaz.maxSpeed();
         System.out.println(zil);
         zil.startMoving();
+        System.out.println();
+
+        vasya.startMove(audi);
+        vasya.refill(lada);
+        vasya.stopMove(bmw);
+        System.out.println(vasya);
+        System.out.println();
+
+        alesha.startMove(zil);
+        alesha.stopMove(gaz);
+        alesha.refill(kamaz);
+        System.out.println(alesha);
+        System.out.println();
+
+        misha.startMove(cityBus);
+        misha.stopMove(touristBus);
+        misha.refill(workBus);
+        System.out.println(misha);
+
     }
 }

@@ -1,4 +1,4 @@
-package HW5;
+package HW5.transport;
 
 public class Bus extends Transport implements Competing {
 
