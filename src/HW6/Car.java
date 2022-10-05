@@ -1,7 +1,7 @@
 package HW6;
 
 public class Car extends Transport implements Competing {
-
+public
 
     public Car(String brand, String model, Double engineVolume) {
         super(brand, model, engineVolume);
