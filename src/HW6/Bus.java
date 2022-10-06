@@ -2,8 +2,43 @@ package HW6;
 
 public class Bus extends Transport implements Competing {
 
-    public Bus(String brand, String model, Double engineVolume) {
+    private CapacityTypeBus capacityTypeBus;
+    public Bus(String brand, String model, Double engineVolume, CapacityTypeBus capacityTypeBus) {
         super(brand, model, engineVolume);
+        this.capacityTypeBus = capacityTypeBus;
+    }
+
+    public CapacityTypeBus getCapacityTypeBus() {
+        return capacityTypeBus;
+    }
+
+    public void setCapacityTypeBus(CapacityTypeBus capacityTypeBus) {
+        this.capacityTypeBus = capacityTypeBus;
+    }
+    public void determineTypeOfBus() {
+        if (capacityTypeBus != null) {
+            switch (capacityTypeBus) {
+                case EXTRA_SMALL:
+                    System.out.println("У автобуса " + getBrand() + " " + getModel() + " вместимость до 10 мест");
+                    break;
+                case SMALL:
+                    System.out.println("У автобуса " + getBrand() + " " + getModel() + " вместимость до 25 мест");
+                    break;
+                case MEDIUM:
+                    System.out.println("У автобуса " + getBrand() + " " + getModel() + " вместимость 40-50 мест");
+                    break;
+                case LARGE:
+                    System.out.println("У автобуса " + getBrand() + " " + getModel() + " вместимость 60-80 мест");
+                    break;
+                case ESPECIALLY_LARGE:
+                    System.out.println("У автобуса " + getBrand() + " " + getModel() + " вместимость 100-120 мест");
+                    break;
+                default:
+                    System.out.println("Нет информации");
+            }
+        } else {
+            System.out.println("Данных недостаточно");
+        }
     }
 
     @Override
