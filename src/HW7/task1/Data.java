@@ -23,20 +23,21 @@ public class Data {
         return confirmPassword;
     }
 
-    public static void checkRegistration(Data data) throws WrongLoginException, WrongPasswordException {
+    public static boolean checkRegistration(Data data) throws WrongLoginException, WrongPasswordException {
         if (data.login.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[_]).{1,20}$") && !data.login.isBlank()) {
             System.out.println("Логин соответствует формату");
         } else {
             throw new WrongLoginException("Неверный формат логина");
 
         }
-        if (data.getPassword().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[_]).{1,20}$") &&
-                data.getPassword().equals(data.getConfirmPassword()) && data.password != null && !data.password.isBlank()) {
+        if (data.password != null && !data.password.isBlank() && data.getPassword().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[_]).{1,20}$") &&
+                data.getPassword().equals(data.getConfirmPassword())) {
             System.out.println("Пароль введен корректно");
         } else {
 
             throw new WrongPasswordException("Неверный формат пароля/пароли не совпадают");
         }
+        return false;
     }
 
 }
