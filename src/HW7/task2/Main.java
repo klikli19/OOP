@@ -58,7 +58,7 @@ public class Main {
                 System.out.println("Обнаружена ошибка:" );
                 System.out.println(e.getMessage());
             } finally {
-                System.out.println(count);
+                System.out.println("Прошло диагностику - " + count);
             }
         return false;
     }
