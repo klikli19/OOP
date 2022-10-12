@@ -24,13 +24,14 @@ public class Data {
     }
 
     public static boolean checkRegistration(Data data) throws WrongLoginException, WrongPasswordException {
-        if (data.login.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[_]).{1,20}$") && !data.login.isBlank()) {
+        if (data.login.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_]).{1,20}$") && !data.login.isBlank()) {
             System.out.println("Логин соответствует формату");
         } else {
             throw new WrongLoginException("Неверный формат логина");
 
         }
-        if (data.password != null && !data.password.isBlank() && data.getPassword().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[_]).{1,20}$") &&
+        if (data.password != null && !data.password.isBlank() && data.getPassword().matches("^(?=.*[0-9])(?=.*[a-z])" +
+                "(?=.*[A-Z])(?=.*[_]).{1,20}$") &&
                 data.getPassword().equals(data.getConfirmPassword())) {
             System.out.println("Пароль введен корректно");
         } else {
