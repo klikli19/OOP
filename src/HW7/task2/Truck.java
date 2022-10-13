@@ -69,7 +69,7 @@ public class Truck extends Transport implements Competing {
         int month;
         LocalDate localDate = LocalDate.now();
         month = localDate.getMonthValue();
-        if (month == 1 || month == 2 || month == 3 || month == 4 || month == 11 || month == 12) {
+        if ((month> 0 && month < 5) || month > 10) {
             System.out.println("Грузовик " + getBrand() + " " + getModel() + " нуждается в смене  резины на зимнюю");
         } else {
             System.out.println("Ставим на грузовик " + getBrand() + " " + getModel() + " летнюю резину.");
