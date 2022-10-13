@@ -5,7 +5,7 @@ public class Data {
     private final String password;
     private final String confirmPassword;
 
-    final String reg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_]).{1,20}$";
+    static final String reg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_]).{1,20}$";
 
 
 
@@ -28,13 +28,13 @@ public class Data {
     }
 
     public static boolean checkRegistration(Data data) throws WrongLoginException, WrongPasswordException {
-        if (data.login.matches(data.reg) && !data.login.isBlank()) {
+        if (data.login.matches(reg) && !data.login.isBlank()) {
             System.out.println("Логин соответствует формату");
         } else {
             throw new WrongLoginException("Неверный формат логина");
 
         }
-        if (data.password != null && !data.password.isBlank() && data.getPassword().matches(data.reg) &&
+        if (data.password != null && !data.password.isBlank() && data.getPassword().matches(reg) &&
                 data.getPassword().equals(data.getConfirmPassword())) {
             System.out.println("Пароль введен корректно");
         } else {
