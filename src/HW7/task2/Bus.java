@@ -1,5 +1,7 @@
 package HW7.task2;
 
+import java.time.Month;
+
 public class Bus extends Transport implements Competing {
 
     private CapacityTypeBus capacityTypeBus;
@@ -67,7 +69,7 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
-    public void diagnostic() throws CantDiagnosticException {
+    public boolean diagnostic() throws CantDiagnosticException {
         throw new CantDiagnosticException("Автобус " + getBrand() + " " + getModel() + " в диагностике не требуется");
     }
 }

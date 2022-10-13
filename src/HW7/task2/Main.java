@@ -1,9 +1,8 @@
 package HW7.task2;
 
 
-import HW7.task2.driver.DriverBus;
-import HW7.task2.driver.DriverCar;
-import HW7.task2.driver.DriverTruck;
+import java.time.LocalDate;
+import java.time.Month;
 
 public class Main {
     public static void main(String[] args) throws CantDiagnosticException {
@@ -39,16 +38,10 @@ public class Main {
 
         checkDiagnostic(audi, zil, gaz, cityBus);
 
-        DriverCar vasya = new DriverCar("Вася", "B", 1.0);
-        DriverTruck alesha = new DriverTruck("Алеша", "C",15.0);
-        DriverBus misha = new DriverBus("Миша", "C", 7.5);
-
-        alesha.checkDriversLicense();
     }
 
     public static boolean checkDiagnostic(Transport ... transports) throws CantDiagnosticException {
         int count = 1;
-
             try {
                 for (Transport transport : transports) {
                     transport.diagnostic();
@@ -58,7 +51,7 @@ public class Main {
                 System.out.println("Обнаружена ошибка:" );
                 System.out.println(e.getMessage());
             } finally {
-                System.out.println("Прошло диагностику - " + count);
+                System.out.println(count);
             }
         return false;
     }

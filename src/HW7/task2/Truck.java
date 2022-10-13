@@ -1,5 +1,8 @@
 package HW7.task2;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 public class Truck extends Transport implements Competing {
 
     private LoadTypeTruck loadTypeTruck;
@@ -62,7 +65,15 @@ public class Truck extends Transport implements Competing {
     }
 
     @Override
-    public void diagnostic() {
-        System.out.println("В грузовике " + getBrand() + " " + getModel() + " нужно залить масло");
+    public boolean diagnostic() throws CantDiagnosticException {
+        int month;
+        LocalDate localDate = LocalDate.now();
+        month = localDate.getMonthValue();
+        if (month == 1 || month == 2 || month == 3 || month == 4 || month == 11 || month == 12) {
+            System.out.println("Грузовик " + getBrand() + " " + getModel() + " нуждается в смене  резины на зимнюю");
+        } else {
+            System.out.println("Ставим на грузовик " + getBrand() + " " + getModel() + " летнюю резину.");
+        }
+        return false;
     }
 }

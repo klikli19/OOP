@@ -1,5 +1,7 @@
 package HW7.task2;
 
+import java.time.Month;
+
 public abstract class Transport {
     private final String brand;
     private final String model;
@@ -38,8 +40,8 @@ public abstract class Transport {
         System.out.println("Информация о транспортном средстве:");
     }
 
-    public void diagnostic() throws CantDiagnosticException {
-
+    public boolean diagnostic() throws CantDiagnosticException {
+        return false;
     }
 
 

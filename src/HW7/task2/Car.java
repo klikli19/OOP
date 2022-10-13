@@ -1,5 +1,8 @@
 package HW7.task2;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 public class Car extends Transport implements Competing {
 
     private BodyTypeCar bodyTypeCar;
@@ -76,8 +79,16 @@ public class Car extends Transport implements Competing {
         System.out.println("Автомобиль " + getBrand() + " продемонстрировал лучшее время");
     }
 
-    @Override
-    public void diagnostic() {
-        System.out.println("В автомобиле " + getBrand() + " " + getModel() + " нужно сменить шины");
+    public boolean diagnostic() throws CantDiagnosticException {
+        int month;
+        LocalDate localDate = LocalDate.now();
+        month = localDate.getMonthValue();
+        if (month == 1 || month == 2 || month == 3 || month == 4 || month == 11 || month == 12) {
+            System.out.println("Автомобиль " + getBrand() + " " + getModel() + " нуждается в смене  резины на зимнюю");
+        } else {
+            System.out.println("Ставим на автомобиль " + getBrand() + " " + getModel() + " летнюю резину.");
+        }
+        return false;
     }
+
 }
