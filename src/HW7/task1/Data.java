@@ -5,6 +5,10 @@ public class Data {
     private final String password;
     private final String confirmPassword;
 
+    final String reg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_]).{1,20}$";
+
+
+
     public Data(String login, String password, String confirmPassword) {
         this.login = login;
         this.password = password;
@@ -24,14 +28,13 @@ public class Data {
     }
 
     public static boolean checkRegistration(Data data) throws WrongLoginException, WrongPasswordException {
-        if (data.login.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_]).{1,20}$") && !data.login.isBlank()) {
+        if (data.login.matches(data.reg) && !data.login.isBlank()) {
             System.out.println("Логин соответствует формату");
         } else {
             throw new WrongLoginException("Неверный формат логина");
 
         }
-        if (data.password != null && !data.password.isBlank() && data.getPassword().matches("^(?=.*[0-9])(?=.*[a-z])" +
-                "(?=.*[A-Z])(?=.*[_]).{1,20}$") &&
+        if (data.password != null && !data.password.isBlank() && data.getPassword().matches(data.reg) &&
                 data.getPassword().equals(data.getConfirmPassword())) {
             System.out.println("Пароль введен корректно");
         } else {
