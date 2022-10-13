@@ -1,6 +1,10 @@
 package HW7.task2;
 
 
+import HW7.task2.driver.DriverBus;
+import HW7.task2.driver.DriverCar;
+import HW7.task2.driver.DriverTruck;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -36,6 +40,11 @@ public class Main {
 //        kamaz.determineTypeOfTtuck();
 //        ural.determineTypeOfTtuck();
 
+        DriverCar vasya = new DriverCar("Вася", "B", 1.0);
+        DriverTruck alesha = new DriverTruck("Алеша", "C", 15.0);
+        DriverBus misha = new DriverBus("Миша", null, 7.5);
+
+        alesha.checkDriversLicense();
         checkDiagnostic(audi, zil, gaz, cityBus);
 
     }
